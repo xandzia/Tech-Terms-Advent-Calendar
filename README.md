@@ -1,6 +1,6 @@
 # Tech-Terms-Advent-Calendar
 ## 1. **throttle & debounce**
-> Паттерны для js (обертки), декораторы, оны навешиваются на функции, чтобы снизить нагрузку на браузер и dom, чтобы притормозить частоту их выполнения.
+> Паттерны для js (обертки), декораторы, они навешиваются на функции, чтобы снизить нагрузку на браузер и dom, чтобы притормозить частоту их выполнения.
 
 **Throttle** - выполнять что-то не чаще одного раза в указанное n - время.
 
@@ -19,3 +19,42 @@
 **Continuous deployment** ("непрерывное развёртываение") - отвечает за то, чтобы весь новый функционал после тестирования сразу же попал в основную программу без ручного вмешательства инженеров DevOps. Пример Docker
 
 **Continuous integration** - постоянное попадание кода в центральный репозиторий после успешного запуска тестов (unit – тесты). Agile Development
+
+## 4. **Currying vs Partial application**
+> языковые приемы, позволяют манипулировать количеством аргументов у функций или методов, трансформация ф-ции в другую ф-цию с меньшим к-вом аргументов.
+
+**Currying** ф-ция в ф-ции
+
+before
+```
+    function add(x, y) {
+        return x + y;
+    }
+```
+after
+```
+    function addC(x) {
+        return function (y) {
+            return x + y;
+        }
+    }
+```
+
+**Partial application** часть аргументов (хоть один, хоть все кроме одного) уже подставлены.
+
+before
+```
+const job = 'programmer'
+const salary1 = getAverageSalary(job, 'spain');
+const salary2 = getAverageSalary(job, 'russia');
+const salary3 = getAverageSalary(job, 'usa');
+```
+after
+```
+const getProgrammersSalaryByCountry =
+  country => getAverageSalary('programmer', country);
+
+const salary1 = getProgrammersSalaryByCountry('spain');
+const salary2 = getProgrammersSalaryByCountry('russia');
+const salary3 = getProgrammersSalaryByCountry('usa');
+```

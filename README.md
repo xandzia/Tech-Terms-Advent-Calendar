@@ -58,3 +58,12 @@ const salary1 = getProgrammersSalaryByCountry('spain');
 const salary2 = getProgrammersSalaryByCountry('russia');
 const salary3 = getProgrammersSalaryByCountry('usa');
 ```
+
+## 5. User story vs Epic
+> относится к Agile - набор подходов по «гибкой» разработке программного обеспечения. Задачи, требования для проэкта.
+
+**user story** - короткие пожелание (от заказчика или команды), что нужно реализовать, сделать, мини-задачи.
+
+**epic** - основное, более общее пожелание, что включает очень много пользовательских историй.
+
+

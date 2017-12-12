@@ -79,3 +79,49 @@ const salary3 = getProgrammersSalaryByCountry('usa');
 
 **Polyfill** - специализированная версия shimming, определяет, отсутствует ли какой-либо "ожидаемый" API (поддерживает ли?) и вручную его реализует. Если это не так, polyfill устанавливает собственные реализации. Использует несколько языковых платформ, чтобы достичь кросс-браузерности. 
 
+## 8. Padding vs Margin
+> отступы от блока
+
+**Padding** - внутренние
+
+**Margin** - внешние
+
+## 9. clientHeight vs offsetHeight vs scrollHeight
+> размеры
+
+**clientHeight** - css height + padding. Не включает horizontal scrollbar height, border, margin
+
+**offsetHeight** - включает border элемента + вертикальный padding + horizontal scrollbar(если есть) + css height элемента
+
+**scrollHeight** - css height + содержимое, которое не отображается на экране (не помещается)
+
+## 10. V8 vs NodeJS
+> JavaScript скрипт, выполняемый на стороне клиента, а Node.js на сервере.
+
+**V8** - виртуальная машина JavaScript, написанная Google, для скорости выполнения js
+
+**Node.js** - программная платформа, основанная на движке V8 (транслирующем JavaScript в машинный код)
+
+## 11. Array.of vs Array.from
+> манипуляции с array
+
+**Array.of** - создаёт новый экземпляр массива Array из произвольного числа аргументов, вне зависимости от числа или типа аргумента.
+```
+Array.of(7);       // [7] 
+Array.of(1, 2, 3); // [1, 2, 3]
+
+Array(7);          // [ , , , , , , ]
+Array(1, 2, 3);    // [1, 2, 3]
+```
+
+**Array.from** - создает массив из чего-угодно
+```
+console.log(Array.from('foo'));
+// expected output: Array ["f", "o", "o"]
+
+console.log(Array.from([1, 2, 3], x => x + x));
+// expected output: Array [2, 4, 6]
+```
+
+
+
